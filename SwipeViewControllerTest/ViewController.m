@@ -7,18 +7,35 @@
 //
 
 #import "ViewController.h"
+#import "SidebarViewController.h"
+#import "TestViewController.h"
+
+#import "UINavigationItem+JTRevealSidebarV2.h"
+#import "JTRevealSidebarV2Delegate.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    TestViewController* swipeVC;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    swipeVC = [[TestViewController alloc] initWithNibName:@"TestViewController" bundle:nil];
+    SidebarViewController* menuController = [[SidebarViewController alloc] initWithNibName:@"SidebarViewController" bundle:nil];
+    swipeVC.menuViewController = menuController;
+    [self.view addSubview:swipeVC.view];
+    
+    //activate sidebar delegation
+    self.navigationItem.revealSidebarDelegate = swipeVC;
+	
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

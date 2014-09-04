@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SidebarViewController.h
 //  SwipeViewControllerTest
 //
 //  Created by Nethery, Matt on 5/22/13.
@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController{
-    
-    
-    
-}
-
-@property(nonatomic, strong)UIView *leftSidebarView;
+@interface SidebarViewController : UIViewController
 
 @end
